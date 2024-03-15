@@ -22,7 +22,7 @@
               Sign in to your Home Access Account
             </h2>
           </div>
-          <form id="loginForm" class="mt-8 space-y-6" method="post">
+          <form id="loginForm" class="mt-8 space-y-6">
             <div class="rounded-md shadow-sm -space-y-px">
               <div>
                 <label for="username" class="sr-only">Username</label>
@@ -30,6 +30,7 @@
                   type="text"
                   id="username"
                   name="username"
+                  value=""
                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Username"
                   required
@@ -41,6 +42,7 @@
                   type="password"
                   id="password"
                   name="password"
+                  value=""
                   class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
                   required
@@ -51,19 +53,19 @@
               <button
                 type="submit"
                 class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                id="signin"
+                id="signIn"
               >
                 Sign in
               </button>
             </div>
           </form>
-          <p id="tryAgain" class="hidden text-red-700 text-center">Wrong Username or Password</p>
+          <p id="tryAgain" class="hidden text-red-700 text-center">Incorrect Username or Password</p>
           <div id="loadingSpinner" class="mt-8 hidden flex items-center justify-center">
             <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-indigo-500"></div>
           </div>
         </div>
         <div id="calculator" class="mt-8 p-2 hidden md:w-3/6 w-full h-full">
-          <form method="post">
+          <form>
             <div class="mb-4">
               <label for="selectClass" class="block text-gray-700 font-bold mb-2">Select Class</label>
               <select id="selectClass" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
