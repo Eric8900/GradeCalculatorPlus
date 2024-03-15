@@ -15,3 +15,10 @@ It calculates the lowest grade that you need for your next assessment (Test, Qui
 - HTML and Javascript
 - Tailwind CSS
 - My Home Access Center API (https://github.com/Eric8900/HomeAccessAPI-Python)
+
+## Preview
+
+<img width="1675" alt="image" src="https://github.com/Eric8900/GradeCalculatorPlus/assets/89477025/99fcfa73-9441-4d71-ba8a-e23abaaafeed">
+
+<img width="1677" alt="image" src="https://github.com/Eric8900/GradeCalculatorPlus/assets/89477025/5e5548bd-0ca3-430f-b0bd-29325e82c049">
+
