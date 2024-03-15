@@ -7,6 +7,7 @@ It calculates the lowest grade that you need for your next assessment (Test, Qui
 ## Improved Features
 
 - Log In with Home Access Center directly for quick access of grades
+    - The website does not store any passwords or anything, so don't worry about account security (also you can look at the code if you're still worried)
 - Less typing because all of your grades are loaded from Home Access Center
 - More intuitive feel 
 
