@@ -9,14 +9,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="min-h-screen flex flex-col">
+    <div class="h-screen flex flex-col overflow-hidden">
       <div class="flex justify-end p-4">
         <button id="logoutButton" class="hidden px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none">
           Logout
         </button>
       </div>
-      <div class="flex-grow flex items-center justify-center">
-        <div id="login" class="max-w-md w-full space-y-8 p-2">
+      <div class="h-5/6 flex-col flex items-center justify-center overflow-hidden">
+        <div id="login" class="md:w-3/6 w-full space-y-8 p-2">
           <div>
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Sign in to your Home Access Account
@@ -64,7 +64,7 @@
             <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-indigo-500"></div>
           </div>
         </div>
-        <div id="calculator" class="mt-8 p-2 hidden md:w-3/6 w-full h-full">
+        <div id="calculator" class="mt-8 p-2 hidden md:w-3/6 w-full">
           <form>
             <div class="mb-4">
               <label for="selectClass" class="block text-gray-700 font-bold mb-2">Select Class</label>
@@ -87,8 +87,8 @@
               <button type="submit" id="calculate" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Calculate</button>
             </div>
           </form>
-          <h1 id="noGrades" class="text-2xl text-center hidden text-indigo-500 mt-8">
-            No grades have been entered in for this class
+          <h1 id="noGrades" class="text-lg text-center hidden text-indigo-500 mt-8">
+            No grades have been entered in for this class or you have left fields blank
           </h1>
           <h1 id="neededGrade" class="text-2xl text-center hidden text-indigo-500 mt-8">
 
@@ -96,8 +96,6 @@
         </div>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
     <script src="script.js" async defer></script>
   </body>
 </html>
