@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const login = document.getElementById('login');
   const selectClass = document.getElementById('selectClass');
   const calculate = document.getElementById('calculate');
-  const signin = document.getElementById('signin');
+  const loginForm = document.getElementById('loginForm');
 
   let names = [];
   let grades = new Map();
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  signin.addEventListener('click', async (e) => {
+  loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const username = document.getElementById('username').value;
