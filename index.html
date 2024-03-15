@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="bg-gray-100">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grade Calculator Plus</title>
+    <meta name="description" content="">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <div class="flex justify-end p-4">
+        <button id="logoutButton" class="hidden px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none">
+          Logout
+        </button>
+      </div>
+      <div class="flex-grow flex items-center justify-center">
+        <div id="login" class="max-w-md w-full space-y-8 p-2">
+          <div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              Sign in to your Home Access Account
+            </h2>
+          </div>
+          <form id="loginForm" class="mt-8 space-y-6">
+            <div class="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label for="username" class="sr-only">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+              <div>
+                <label for="password" class="sr-only">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Sign in
+              </button>
+            </div>
+          </form>
+          <p id="tryAgain" class="hidden text-red-700 text-center">Wrong Username or Password</p>
+          <div id="loadingSpinner" class="mt-8 hidden flex items-center justify-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-indigo-500"></div>
+          </div>
+        </div>
+        <div id="calculator" class="mt-8 p-2 hidden w-3/6 h-full">
+          <form>
+            <div class="mb-4">
+              <label for="selectClass" class="block text-gray-700 font-bold mb-2">Select Class</label>
+              <select id="selectClass" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="selectCategory" class="block text-gray-700 font-bold mb-2">Select Category</label>
+              <select id="selectCategory" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
+                <option value="0">Major</option>
+                <option value="1">Minor</option>
+                <option value="2">Other</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="inputGrade" class="block text-gray-700 font-bold mb-2">Enter Desired Grade</label>
+              <input type="text" id="inputGrade" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" placeholder="Enter grade" required>
+            </div>
+            <div>
+              <button type="submit" id="calculate" class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Calculate</button>
+            </div>
+          </form>
+          <h1 id="noGrades" class="text-2xl text-center hidden text-indigo-500 mt-8">
+            No grades have been entered in for this class
+          </h1>
+          <h1 id="neededGrade" class="text-2xl text-center hidden text-indigo-500 mt-8">
+
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" async defer></script>
+  </body>
+</html>
