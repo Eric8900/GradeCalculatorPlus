@@ -22,7 +22,7 @@
               Sign in to your Home Access Account
             </h2>
           </div>
-          <form id="loginForm" class="mt-8 space-y-6" action="./script.js">
+          <form id="loginForm" class="mt-8 space-y-6" method="post">
             <div class="rounded-md shadow-sm -space-y-px">
               <div>
                 <label for="username" class="sr-only">Username</label>
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div id="calculator" class="mt-8 p-2 hidden md:w-3/6 w-full h-full">
-          <form action="./script.js">
+          <form method="post">
             <div class="mb-4">
               <label for="selectClass" class="block text-gray-700 font-bold mb-2">Select Class</label>
               <select id="selectClass" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" required>
