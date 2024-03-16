@@ -14,7 +14,12 @@ function createElements() {
   for (let i = 0; i < names.length; i++) {
     let opt = document.createElement('option');
     opt.value = names[i];
-    opt.textContent = names[i];
+    let avg = '--';
+    let classGrades = grades.get(names[i]);
+    if (classGrades.length === 3) {
+      avg = (parseFloat(classGrades[0][4]) + parseFloat(classGrades[1][4]) + parseFloat(classGrades[2][4])).toFixed(3);
+    }
+    opt.textContent = `${names[i]} | Average: ${avg}`;
     selectClass.appendChild(opt);
   }
 }
@@ -39,8 +44,8 @@ signIn.addEventListener('click', async (e) => {
       logoutButton.classList.remove('hidden');
       calculator.classList.remove('hidden');
       names = data['names'];
-      console.log(data['names']);
-      console.log(data['grades']);
+      // console.log(data['names']);
+      // console.log(data['grades']);
       for (let i = 0; i < names.length; i++) {
         grades.set(names[i], data['grades'][i]);
       }
@@ -70,11 +75,14 @@ calculate.addEventListener('click', (e) => {
 
   neededGrade.classList.add('hidden');
   noGrades.classList.add('hidden');
-  
 
-  if (classGrades.length === 0) {
+  if (classGrades.length !== 3) {
     noGrades.classList.remove('hidden');
     return;
+  }
+
+  while (neededGrade.firstChild) {
+    neededGrade.removeChild(neededGrade.firstChild);
   }
 
   let numMajors = classGrades[0][1] / 100;
@@ -99,5 +107,15 @@ calculate.addEventListener('click', (e) => {
   
   let avg = (parseFloat(classGrades[0][4]) + parseFloat(classGrades[1][4]) + parseFloat(classGrades[2][4]));
   neededGrade.classList.remove('hidden');
-  neededGrade.textContent = `You need a ${ans.toFixed(4)} on your next ${(category === 0 ? "test" : category === 1 ? "quiz" : "other")} to keep a ${desiredGrade}, given that you have a ${avg.toFixed(4)}`;
+  let wordsArray = `You need a ${ans.toFixed(4)} on your next ${(category === 0 ? "test" : category === 1 ? "quiz" : "other")} to keep a ${desiredGrade}, given that you have a ${avg.toFixed(4)}`.split(" ");
+  wordsArray.forEach((word, index) => {
+    const wordElement = document.createElement("span");
+    wordElement.classList.add("word");
+    wordElement.textContent = word + " ";
+    neededGrade.appendChild(wordElement);
+
+    setTimeout(() => {
+      wordElement.classList.add("fade-in");
+    }, index * 100);
+  });
 });
