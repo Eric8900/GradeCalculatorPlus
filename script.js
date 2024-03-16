@@ -37,7 +37,9 @@ signIn.addEventListener('click', async (e) => {
       loadingSpinner.classList.add('hidden');
       return;
     }
+    signIn.disabled = true;
     const response = await fetch(`https://home-access-api-python.vercel.app/api/getGrades?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+    signIn.disabled = false;
     if (response.ok) {
       const data = await response.json();
       login.classList.add('hidden');
