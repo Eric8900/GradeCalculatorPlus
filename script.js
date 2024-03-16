@@ -109,7 +109,7 @@ calculate.addEventListener('click', (e) => {
   
   let avg = (parseFloat(classGrades[0][4]) + parseFloat(classGrades[1][4]) + parseFloat(classGrades[2][4]));
   neededGrade.classList.remove('hidden');
-  let wordsArray = `You need a ${ans.toFixed(4)} on your next ${(category === 0 ? "test" : category === 1 ? "quiz" : "other")} to ${(desiredGrade < avg ? 'keep' : 'get up to')} a ${desiredGrade}, given that you have a ${avg.toFixed(4)}`.split(" ");
+  let wordsArray = `You need a ${ans.toFixed(4)} on your next ${(category === 0 ? "test" : category === 1 ? "quiz" : "other")} to ${(desiredGrade <= avg ? 'keep' : 'get up to')} a ${desiredGrade}, given that you have a ${avg.toFixed(4)}`.split(" ");
   wordsArray.forEach((word, index) => {
     const wordElement = document.createElement("span");
     wordElement.classList.add("word");
